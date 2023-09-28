@@ -37,10 +37,14 @@ jobs:
           repository: railwayhistorymap/data
           ref: data
           path: .data
-      - name: Generate
-        uses: railwayhistorymap/build-action@dev
+      - uses: actions/setup-node@v3
         with:
-          milliseconds: 3000
+          node-version: 20
+      - name: Generate
+        run: npx ts-node build.ts
+        # uses: railwayhistorymap/build-action@dev
+        # with:
+        #   milliseconds: 3000
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
