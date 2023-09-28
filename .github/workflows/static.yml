@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: 20
       - name: Build
-        run: npm install && mkdir -p _site && npm run build
+        run: npm install && npm run build
       # - name: Generate
       #   uses: railwayhistorymap/build-action@dev
       #   with:
