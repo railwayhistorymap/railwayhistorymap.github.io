@@ -38,7 +38,7 @@ jobs:
           ref: data
           path: .data
       - name: Generate
-        uses: railwayhistorymap/build-action@main
+        uses: railwayhistorymap/build-action@dev
         with:
           milliseconds: 2000
       - name: Setup Pages
