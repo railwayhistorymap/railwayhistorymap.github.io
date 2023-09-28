@@ -31,6 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Checkout data
+        uses: actions/checkout@v4
+        with:
+          repository: railwayhistorymap/data
+          ref: data
+          path: .data
       - name: Generate
         uses: railwayhistorymap/build-action@main
         with:
