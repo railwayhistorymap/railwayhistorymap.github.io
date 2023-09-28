@@ -16,14 +16,14 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-const dataResponse = await fetch('/data.json');
-
-if (!dataResponse.ok) {
-    alert("Failed get data.json");
-    throw new Error("Failed get data.json")
-}
-const data = dataResponse.json()
-
-for (const geojson of data) {
-    L.geoJSON(geojson, {}).addTo(map);
-}
+fetch('/data.json')
+    .then(response => response.json())
+    .then(data => {
+        for (const geojson of data) {
+            L.geoJSON(geojson, {}).addTo(map);
+        }
+    })
+    .catch(e => {
+        alert("Failed get data.json");
+        throw new Error("Failed get data.json")
+    })
