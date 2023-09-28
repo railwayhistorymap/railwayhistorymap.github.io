@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Railway History Map",
   "scripts": {
+    "build": "ts-node build.ts"
   },
   "keywords": [
     "raylway",
@@ -10,5 +11,9 @@
     "map"
   ],
   "author": "Alexey Gorshkov",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.7.1",
+    "ts-node": "^10.9.1"
+  }
 }
