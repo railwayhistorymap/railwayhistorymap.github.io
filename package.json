@@ -1,0 +1,14 @@
+{
+  "name": "railwayhistorymap.github.io",
+  "version": "0.0.1",
+  "description": "Railway History Map",
+  "scripts": {
+  },
+  "keywords": [
+    "raylway",
+    "history",
+    "map"
+  ],
+  "author": "Alexey Gorshkov",
+  "license": "MIT"
+}
