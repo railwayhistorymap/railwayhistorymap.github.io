@@ -1,8 +1,7 @@
 import * as fs from 'fs'
 
-fs.mkdirSync("_site")
-fs.copyFileSync("index.html", "_site/index.html")
-fs.copyFileSync("index.js", "_site/index.js")
+fs.copyFileSync("index.html", "dist/index.html")
+fs.copyFileSync("index.js", "dist/index.js")
 
 const result = []
 for (const file of fs.readdirSync('.data')) {

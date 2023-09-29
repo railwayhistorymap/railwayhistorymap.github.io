@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Railway History Map",
   "scripts": {
-    "build": "ts-node build.ts"
+    "build": "parcel build index.html",
+    "debug": "parcel index.html",
+    "generate": "ts-node build.ts"
   },
   "keywords": [
     "raylway",
@@ -16,5 +18,8 @@
     "@types/node": "^20.7.1",
     "parcel": "^2.9.3",
     "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@types/leaflet": "^1.9.6"
   }
 }
