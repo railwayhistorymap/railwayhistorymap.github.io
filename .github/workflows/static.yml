@@ -44,8 +44,8 @@ jobs:
         run: npm install 
       - name: Build
         run: npm run build
-      - name: Generate data
-        run: npm run generate-data
+      - name: Generate
+        run: npm run generate
       # - name: Generate
       #   uses: railwayhistorymap/build-action@dev
       #   with:
