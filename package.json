@@ -4,7 +4,7 @@
   "description": "Railway History Map",
   "scripts": {
     "build": "parcel build index.html",
-    "debug": "parcel index.html",
+    "debug": "parcel serve index.html",
     "generate": "ts-node build.ts"
   },
   "keywords": [

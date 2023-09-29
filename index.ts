@@ -6,6 +6,7 @@ const zoom = 10;
 const lat = 60;
 const lng = 30;
 
+
 // calling map
 const map = L.map("map",
     {
@@ -13,13 +14,29 @@ const map = L.map("map",
     }
 ).setView([lat, lng], zoom);
 
+const attributions = [
+    '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>',
+    'Рендеринг: <a href="https://openrailwaymap.org">OpenRailwayMap</a>, Данные карты &copy; участники OpenStreetMap',
+    '&copy; Алексей Горшков'
+];
 
-// Used to load and display tile layers on the map
-// Most tile servers require attribution, which you can set under `Layer`
+const attributionControl = L.control.attribution({
+    prefix: attributions.join(' | ')
+    // prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+}).addTo(map);
+
 L.tileLayer(
-    // "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        opacity: 0.5
+    }
+).addTo(map);
+
+L.tileLayer(
+    // ,
     "https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
     {
+        opacity: 0.5,
         //   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }
 ).addTo(map);
@@ -34,4 +51,9 @@ fetch('/data.json')
     .catch(e => {
         alert("Failed get data.json");
         throw new Error("Failed get data.json")
-    })
+    });
+
+if (module['hot']) {
+    module['hot'].accept();
+}
+
