@@ -8,4 +8,4 @@ for (const file of fs.readdirSync('.data')) {
         result.push(json)
     }
 }
-fs.writeFileSync('_site/data.json', JSON.stringify(result))
+fs.writeFileSync('dist/data.json', JSON.stringify(result))
