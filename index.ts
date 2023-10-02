@@ -45,7 +45,3 @@ fetch('/data.json')
         alert("Failed get data.json");
         throw new Error("Failed get data.json")
     });
-
-if (module['hot']) {
-    module['hot'].accept();
-}
