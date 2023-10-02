@@ -9,12 +9,16 @@ const map = L.map("map",
     }
 ).setView([lat, lng], zoom);
 
-const attributionControl = L.control.attribution().addTo(map);
+const attributionControl = L.control.attribution(
+    {
+        prefix: `<a href="https://leafletjs.com">&copy; Leaflet</a>`
+    }
+).addTo(map);
 
 L.tileLayer(
     "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
-        attribution: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>',
+        attribution: '<a href="http://openstreetmap.org">&copy; OpenStreetMap</a>',
         opacity: 0.5
     }
 ).addTo(map);
@@ -23,7 +27,7 @@ L.tileLayer(
     // ,
     "https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
     {
-        attribution: 'Рендеринг: <a href="https://openrailwaymap.org">OpenRailwayMap</a>, Данные карты &copy; участники OpenStreetMap',
+        attribution: '<a href="https://openrailwaymap.org">&copy; OpenRailwayMap</a>',
         opacity: 0.5,
     }
 ).addTo(map);
