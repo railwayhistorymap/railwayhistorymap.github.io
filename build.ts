@@ -7,7 +7,9 @@ for (const filename of fs.readdirSync('.data')) {
         console.info(`found file: ${filename}`)
         const json: IFeatureCollection = JSON.parse(fs.readFileSync(`.data/${filename}`, { encoding: "utf8" }))
         const feature = json.features[0]
-        feature.properties = feature.properties || { source: { filename: filename } }
+        feature.properties = feature.properties || {}
+        feature.properties.source = feature.properties.source || {}
+        feature.properties.source.filename = filename
         result.push(json)
     }
 }
