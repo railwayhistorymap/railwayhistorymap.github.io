@@ -17,9 +17,24 @@
             margin: 0;
         }
 
-        #map {
+        .content {
+            display: grid;
             height: 100%;
             width: 100%;
+
+            gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+            grid-template-columns: 1fr 400px;
+        }
+
+        #map {
+            grid-column: 1/2;
+            grid-row: 1;
+        }
+
+        #sidebar {
+            grid-column: 2/2;
+            grid-row: 1;
         }
     </style>
 
@@ -28,7 +43,30 @@
 </head>
 
 <body>
-    <div id="map">
+    <div class="content">
+        <div id="map">
+        </div>
+        <div id="sidebar">
+            <table id="tracks">
+                <thead>
+                    <tr>
+                        <th>Линия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+
+            <template id="track-row">
+                <tr>
+                    <td class="title"></td>
+                    <td>
+                        <button class="go">Перейти</button>
+                    </td>
+                </tr>
+            </template>
+        </div>
     </div>
 
     <script src="index.ts"></script>
