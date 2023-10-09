@@ -79,13 +79,16 @@ fetch('/data.json')
     });
 
 interface IGeoJson {
-    type: String;
+    type: string;
 }
 
 interface IFeature extends IGeoJson {
     type: 'Feature'
-    properties: {
-        name: string
+    properties?: {
+        name?: string
+        source?: {
+            filename?: string
+        }
     }
     geometry: any
 }

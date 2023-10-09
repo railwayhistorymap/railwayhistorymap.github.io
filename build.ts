@@ -1,10 +1,13 @@
 import * as fs from 'fs'
+import { IFeatureCollection } from './model/geojson'
 
-const result: any[] = []
-for (const file of fs.readdirSync('.data')) {
-    if (file.endsWith('.geojson')) {
-        console.info(`found file: ${file}`)
-        const json = JSON.parse(fs.readFileSync(`.data/${file}`, {encoding: "utf8"}))
+const result: IFeatureCollection[] = []
+for (const filename of fs.readdirSync('.data')) {
+    if (filename.endsWith('.geojson')) {
+        console.info(`found file: ${filename}`)
+        const json: IFeatureCollection = JSON.parse(fs.readFileSync(`.data/${filename}`, { encoding: "utf8" }))
+        const feature = json.features[0]
+        feature.properties = feature.properties || { source: { filename: filename } }
         result.push(json)
     }
 }
