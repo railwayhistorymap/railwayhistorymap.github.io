@@ -8,7 +8,7 @@
     "generate": "ts-node build.ts"
   },
   "keywords": [
-    "raylway",
+    "railway",
     "history",
     "map"
   ],
